@@ -90,13 +90,13 @@ public class TestFecha {
     public void testGetDiaSemana() {
         Data fecha = new Data(12, 12, 2023);
         String diaSemanaObtenido = fecha.getDiaSetmana();
-        String diaSemanaEsperado = "martes";
+        String diaSemanaEsperado = "dimarts";
         assertTrue(diaSemanaObtenido.equalsIgnoreCase(diaSemanaEsperado), "Esperaba que fuera "+ diaSemanaEsperado +" y el 12/12/2023 se ha determinado que es " + diaSemanaObtenido);
 
         Data fecha2 = new Data(1, 1, 2012);
         diaSemanaObtenido = fecha2.getDiaSetmana();
-        diaSemanaEsperado = "domingo";
-        assertTrue(fecha2.getDiaSetmana().equalsIgnoreCase("domingo"), "Esperaba que fuera "+ diaSemanaEsperado +" y el 01/01/2012 se ha determinado que es " + diaSemanaObtenido);
+        diaSemanaEsperado = "diumenge";
+        assertTrue(fecha2.getDiaSetmana().equalsIgnoreCase(diaSemanaEsperado), "Esperaba que fuera "+ diaSemanaEsperado +" y el 01/01/2012 se ha determinado que es " + diaSemanaObtenido);
     }
 
     @Test
@@ -182,7 +182,7 @@ public class TestFecha {
     @Test
     public void testMostrarFechaDia21Mes3FormatoTexto() {
 
-        String textoFechaFormatoGB = "21-marzo-1998";
+        String textoFechaFormatoGB = "21-març-1998";
         Data fecha = new Data(21,3,1998);
         fecha.mostrarEnFormatText();
         String salida = baos.toString();
@@ -192,7 +192,7 @@ public class TestFecha {
     @Test
     public void testMostrarFechaDia1Mes3FormatoTexto() {
 
-        String textoFechaFormatoTexto = "01-marzo-1998";
+        String textoFechaFormatoTexto = "01-març-1998";
         Data fecha = new Data(1,3,1998);
         fecha.mostrarEnFormatText();
         String salida = baos.toString();

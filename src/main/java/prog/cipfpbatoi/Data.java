@@ -36,6 +36,9 @@ public class Data {
 	 * Inicializa la fecha a partir de otra pasada en formato String dd/mm/yyyy
 	 *
 	 * Deberemos trocearlas de forma que asignemos el día més y año a cada uno de los atributoe
+         * Tienes que utilizar las funciones de *String o consultar la documentación oficial y hacerlo OBLIGATORIAMENTE 
+         * con la clase StringTokenizer. 
+         * Si el formato recibido no es el correcto, creará la fecha por defecto.
 	 * @param fecha
 	 */
 	public Data(String data) {
@@ -114,7 +117,8 @@ public class Data {
 	}
 
 	/**
-	 * Retorna el dia correspondiente de la semana en formato String
+	 * Retorna un String que representa el dia de la setmana en format text (dilluns, dimarts, dimecres, dijous, divendres, dissabte, diumenge).
+         * L'algorisme de resolució d'aquest mètode es troba al enunciat.
 	 * @return String
 	 */
 	public String getDiaSetmana() {
@@ -122,7 +126,7 @@ public class Data {
 	}
 
 	/**
-	 * Solo Festivo sábado o domingo
+	 * Retorna un booleà indicant si la data representada per l'objecte actual és festiva. Es considerarà festiu si el dia de la setmana és dissabte o diumenge
 	 * @return boolean
 	 */
 	public boolean isFestiu() {
@@ -130,7 +134,10 @@ public class Data {
 	}
 
 	/**
-	 * Devuelve el número de la semana dentro del año actual.
+	 * Retorna el número de la setmana dins de l'any actual. 
+         * Es considera una setmana l'interval de dates entre una data que siga dilluns i la següent data en ordre cronològic que siga diumenge. 
+         * També es comptabilitza com a setmana tant la primera setmana de l'any com l'última (inclusivament en aquells anys en què la primera i/o 
+         * última setmana no conté set dies en total).
 	 *
 	 * @return int dia semana
 	 */
@@ -139,8 +146,10 @@ public class Data {
 	}
 
 	/**
-	 * Devuelve un objeto de tipo fecha que representa una fecha añadiendo @numDias
-	 * A la fecha Actual. El número máximo de dias a restar es 30
+	 * Retorna un nou objecte de tipus data que representa la data resultant d'afegir el nombre de dies passats com a argument a la data que representa l'objecte actual. 
+         * Haurem de tindre en compte els dies que té el mes actual i si l'any és de traspàs (bisiesto) 
+         * amb la finalitat de construir el nou objecte amb la data correcta. 
+         * El màxim nombre de dies que podrem afegir serà 30 i no podrem afegir un nombre negatiu de dies. 
 	 *
 	 * @return boolean
 	 */
@@ -149,8 +158,9 @@ public class Data {
 	}
 
 	/**
-	 * Devuelve un objeto de tipo fecha que representa una fecha restando @numDias
-	 * A la fecha Actual. El número máximo de dias a restar es 30
+	 * Retorna un nou objecte de tipus data que representa la data resultant de restar el nombre de dies passats com a argument a la data que representa l'objecte actual. 
+         * Haurem de tindre en compte els dies que té el mes actual i si l'any és de traspàs (bisiesto) amb la finalitat de construir el nou objecte amb la data correcta.  
+         * El màxim nombre de dies que podrem restar serà 30 i no podrem restar un nombre negatiu de dies. 
 	 *
 	 * @return boolean
 	 */
@@ -158,6 +168,11 @@ public class Data {
 		return null;
 	}
 
+        /**
+         * Retorna un booleà indicant si la data representada per l'objecte actual és correcta. 
+         * No oblides comprovar que el dia es trobe dins del rang dels dies que té el mes tenint en compte si l'any és de traspàs(bisiesto) o no.
+         * @return 
+         */
 	public boolean isCorrecta(){
 		return false;
 	}
